@@ -22,9 +22,20 @@ const Links: MusicLink[] = [
   {
     id: uid(),
     attributes: {
-      url: "https://open.spotify.com/album/3GT2Jo48myPUk8PeF0Zirl?si=bac3CU6jQXyHJJbXJsOlkA",
+      url: "https://youtu.be/-_o5uiCJLZg",
       youtube: true,
       spotify: false,
+      title: "You Didn't Love Me (Official Video)",
+      description: "Watch CAPSULES - You Didn't Love Me (Like You Said You Would) Official Video on YouTube now!",
+      image: "/you_didn't_love_me_snapshot.png",
+    },
+  },
+  {
+    id: uid(),
+    attributes: {
+      url: "https://open.spotify.com/album/3GT2Jo48myPUk8PeF0Zirl?si=bac3CU6jQXyHJJbXJsOlkA",
+      youtube: false,
+      spotify: true,
       title: "Please, Believe - CAPSULES",
       description: "Listen to Please, Believe by CAPSULES on Spotify!",
       image: "/please-believe.png",
