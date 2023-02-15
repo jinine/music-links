@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         <a href="https://soundcloud.com/capsulesofficial" className="text-white hover:text-secondary" target="_blank" rel="noopener noreferrer">
           <img src="/logos/soundcloud.png" alt="Soundcloud" className="h-8" />
         </a>
-        <a href="https://www.youtube.com/@capsules6179" className="text-white hover:text-secondary" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.youtube.com/@capsulesofficial" className="text-white hover:text-secondary" target="_blank" rel="noopener noreferrer">
           <img src="/logos/youtube.svg" alt="Youtube" className="h-8" />
         </a>
       </div>
