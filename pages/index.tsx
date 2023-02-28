@@ -80,7 +80,7 @@ export default function Home() {
                   />
                   </div>
                
-                  <div className="py-4 lg:w-1/2">
+                  <div className="py-4 lg:w-1/2 p-2">
                     <div className="font-soehne text-xl font-bold hover:underline">
                       {link.attributes.title}
                     </div>
