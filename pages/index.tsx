@@ -67,11 +67,12 @@ export default function Home() {
       {/* Content */}
       <section id="body" className="min-h-screen overflow-scroll p-12 lg:px-72">
         <div>
+          <div className="py-4 font-bold text-2xl font-soehne">New Music</div>
           <div className={styles.linksContainer}>
             {Links.map((link: MusicLink) => (
               <Link href={link.attributes.url} key={link.id} className="py-8">
-                <div className="hover:bg-secondary hover:text-black">
-                  <div className="p-4">
+                <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container mx-auto space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
+                  <div className="p-4 lg:w-1/2">
                      <img
                     src={link.attributes.image}
                     alt={link.attributes.description}
@@ -79,11 +80,11 @@ export default function Home() {
                   />
                   </div>
                
-                  <div className="p-2 py-4">
+                  <div className="py-4 lg:w-1/2">
                     <div className="font-soehne text-xl font-bold hover:underline">
                       {link.attributes.title}
                     </div>
-                    <div className="font-firasans text-md">
+                    <div className="font-firasans text-sm">
                       {link.attributes.description}
                     </div>
                   </div>
