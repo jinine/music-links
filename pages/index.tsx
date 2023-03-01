@@ -26,7 +26,8 @@ const Links: MusicLink[] = [
       youtube: true,
       spotify: false,
       title: "You Didn't Love Me (Official Video)",
-      description: "Watch CAPSULES - You Didn't Love Me (Like You Said You Would) Official Video on YouTube now!",
+      description:
+        "Watch CAPSULES - You Didn't Love Me (Like You Said You Would) Official Video on YouTube now!",
       image: "/you_didn't_love_me_snapshot.png",
     },
   },
@@ -54,11 +55,18 @@ const Links: MusicLink[] = [
   },
 ];
 
+const description: String =
+  "Lim is an independent musician that makes alternative hip-hop music based out of Vancouver, BC.";
+
 export default function Home() {
+  
+  let links: MusicLink[] = Links.slice(0, 3);
+  let pastLinks: MusicLink[] = Links.slice(3);
+
   return (
     <>
       <Head>
-        <title>CAPSULES</title>
+        <title>LIM</title>
       </Head>
 
       {/* Header */}
@@ -66,20 +74,25 @@ export default function Home() {
 
       {/* Content */}
       <section id="body" className="min-h-screen overflow-scroll p-12 lg:px-72">
+        <div className="p-12 rounded border-white border-2 align-middle text-center font-ndot">
+          <div className="text-2xl">LIM ENGEN</div>
+          <div className="text-md">{description}</div>
+        </div>
+
         <div>
-          <div className="py-4 font-bold text-2xl font-soehne">New Music</div>
+          <div className="py-4 font-bold text-2xl font-ndot">New Music</div>
           <div className={styles.linksContainer}>
-            {Links.map((link: MusicLink) => (
+            {links.map((link: MusicLink) => (
               <Link href={link.attributes.url} key={link.id} className="py-8">
                 <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container mx-auto space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
                   <div className="p-4 lg:w-1/2">
-                     <img
-                    src={link.attributes.image}
-                    alt={link.attributes.description}
-                    className="rounded"
-                  />
+                    <img
+                      src={link.attributes.image}
+                      alt={link.attributes.description}
+                      className="rounded"
+                    />
                   </div>
-               
+
                   <div className="py-4 lg:w-1/2 p-2">
                     <div className="font-soehne text-xl font-bold hover:underline">
                       {link.attributes.title}
@@ -90,6 +103,13 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
+            ))}
+          </div>
+          <div>
+            {pastLinks.map((link: MusicLink) =>(
+              <>
+              {link.attributes.title}
+              </>
             ))}
           </div>
         </div>

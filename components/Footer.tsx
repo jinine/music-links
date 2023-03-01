@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white py-12 text-white flex items-center justify-center">
+    <footer className="bg-black py-12 text-white flex items-center justify-center">
       <div className="flex justify-around w-full">
         <a href="https://open.spotify.com/artist/1pv1PKaVuugmSNpVlLHYuc?si=MVIYi-s4R86_kkNkcQqK6g" className="text-white hover:text-secondary" target="_blank" rel="noopener noreferrer">
           <img src="/logos/spotify.png" alt="Spotify" className="h-8" />

@@ -24,6 +24,7 @@ module.exports = {
         montserrat: ["Montserrat", "sans-serif"],
         firasans: ["fira-sans", "sans-serif"],
         soehne: ["soehne", "sans-serif"],
+        ndot: ["Ndot"],
       },
     },
   },

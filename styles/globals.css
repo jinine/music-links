@@ -111,3 +111,11 @@ a {
     color-scheme: dark;
   }
 }
+
+@layer base {
+  @font-face {
+    font-family: Ndot;
+    font-weight: 400;
+    src: url(/fonts/Ndot-55.woff2) format("woff");
+  }
+}
