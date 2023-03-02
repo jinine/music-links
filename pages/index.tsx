@@ -75,7 +75,7 @@ export default function Home() {
       {/* Content */}
       <section id="body" className="min-h-screen overflow-scroll p-12 lg:px-72">
         <div className="p-12 rounded border-white border-2 align-middle text-center font-ndot">
-          <div className="text-2xl">LIM ENGEN</div>
+          <div className="text-2xl">LIM</div>
           <div className="text-md">{description}</div>
         </div>
 
