@@ -119,3 +119,42 @@ a {
     src: url(/fonts/Ndot-55.woff2) format("woff");
   }
 }
+
+@layer base {
+  /* Regular */
+  @font-face {
+    font-family: Monospace;
+    font-weight: 400;
+    font-style: normal;
+    src: url(/fonts/SpaceMono-Regular.woff2) format("woff2"),
+         url(/fonts/SpaceMono-Regular.woff) format("woff");
+  }
+
+  /* Bold */
+  @font-face {
+    font-family: Monospace;
+    font-weight: 700;
+    font-style: normal;
+    src: url(/fonts/SpaceMono-Bold.woff2) format("woff2"),
+         url(/fonts/SpaceMono-Bold.woff) format("woff");
+  }
+
+  /* Italic */
+  @font-face {
+    font-family: Monospace;
+    font-weight: 400;
+    font-style: italic;
+    src: url(/fonts/SpaceMono-Italic.woff2) format("woff2"),
+         url(/fonts/SpaceMono-Italic.woff) format("woff");
+  }
+
+  /* Bold Italic */
+  @font-face {
+    font-family: Monospace;
+    font-weight: 700;
+    font-style: italic;
+    src: url(/fonts/SpaceMono-BoldItalic.woff2) format("woff2"),
+         url(/fonts/SpaceMono-BoldItalic.woff) format("woff");
+  }
+}
+

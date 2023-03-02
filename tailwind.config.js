@@ -25,6 +25,7 @@ module.exports = {
         firasans: ["fira-sans", "sans-serif"],
         soehne: ["soehne", "sans-serif"],
         ndot: ["Ndot"],
+        monospace: ["Monospace"],
       },
     },
   },
