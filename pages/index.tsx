@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Link from "next/link";
 import { uid } from "uid";
 import Footer from "@/components/Footer";
+import MyComponent from "@/components/Color";
 
 type MusicLink = {
   id: React.Key;
@@ -59,7 +60,6 @@ const description: String =
   "Lim is an independent musician that makes alternative hip-hop music based out of Vancouver, BC.";
 
 export default function Home() {
-  
   let links: MusicLink[] = Links.slice(0, 3);
   let pastLinks: MusicLink[] = Links.slice(3);
 
@@ -74,7 +74,8 @@ export default function Home() {
 
       {/* Content */}
       <section id="body" className="min-h-screen overflow-scroll p-12 lg:px-72">
-        <div className="p-12 rounded border-white border-2 align-middle text-center font-ndot">
+        <div className="p-12 rounded text-black border-white border-2 align-middle text-center font-ndot canvas-container overflow-hidden">
+          <MyComponent />
           <div className="text-2xl">LIM ENGEN</div>
           <div className="text-md">{description}</div>
         </div>
@@ -106,10 +107,8 @@ export default function Home() {
             ))}
           </div>
           <div>
-            {pastLinks.map((link: MusicLink) =>(
-              <>
-              {link.attributes.title}
-              </>
+            {pastLinks.map((link: MusicLink) => (
+              <>{link.attributes.title}</>
             ))}
           </div>
         </div>

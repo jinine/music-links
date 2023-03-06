@@ -119,3 +119,16 @@ a {
     src: url(/fonts/Ndot-55.woff2) format("woff");
   }
 }
+
+
+.canvas-container {
+  position: relative;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="url(#gradient)"/></svg>');
+}
+
+.canvas-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
