@@ -120,7 +120,6 @@ a {
   }
 }
 
-<<<<<<< HEAD
 
 .canvas-container {
   position: relative;
@@ -133,43 +132,3 @@ a {
   left: 0;
   z-index: -1;
 }
-=======
-@layer base {
-  /* Regular */
-  @font-face {
-    font-family: Monospace;
-    font-weight: 400;
-    font-style: normal;
-    src: url(/fonts/SpaceMono-Regular.woff2) format("woff2"),
-         url(/fonts/SpaceMono-Regular.woff) format("woff");
-  }
-
-  /* Bold */
-  @font-face {
-    font-family: Monospace;
-    font-weight: 700;
-    font-style: normal;
-    src: url(/fonts/SpaceMono-Bold.woff2) format("woff2"),
-         url(/fonts/SpaceMono-Bold.woff) format("woff");
-  }
-
-  /* Italic */
-  @font-face {
-    font-family: Monospace;
-    font-weight: 400;
-    font-style: italic;
-    src: url(/fonts/SpaceMono-Italic.woff2) format("woff2"),
-         url(/fonts/SpaceMono-Italic.woff) format("woff");
-  }
-
-  /* Bold Italic */
-  @font-face {
-    font-family: Monospace;
-    font-weight: 700;
-    font-style: italic;
-    src: url(/fonts/SpaceMono-BoldItalic.woff2) format("woff2"),
-         url(/fonts/SpaceMono-BoldItalic.woff) format("woff");
-  }
-}
-
->>>>>>> e3d1f6c060b3c1b15051a88e89badf115e97f0ff
