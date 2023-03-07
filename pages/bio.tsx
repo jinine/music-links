@@ -28,7 +28,7 @@ export default function Bio() {
 
         <div className="text-3xl pt-4 text-center font-ndot font-bold">Lim Engen</div>
         
-        <div className="font-firasans lg:px-36 my-4"> 
+        <div className="font-monospace text-sm lg:px-36 my-4"> 
             Lim - of Capsules is an underground hip-hop artist born and residing in the greater Vancouver area. 
             He began creating music in 2013 and continues to release beautiful and compelling art regularly. Lim 
             is a mixed Korean-European rapper who writes about thought-provoking situations in his life - often involving

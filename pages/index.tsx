@@ -81,7 +81,7 @@ export default function Home() {
         </div>
 
         <div className="bg-black hover:bg-white border-2 hover:text-black hover:border-white text-white align-middle text-center my-2 w-1/3 mx-auto">
-          <button className="uppercase font-firasans">
+          <button className="uppercase font-monospace text-xl">
             <Link href="/bio" className="flex items-center">Read Bio <span className="px-2"/><FaCaretRight /></Link>
           </button>
         </div>
