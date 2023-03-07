@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 import Link from "next/link";
 import { uid } from "uid";
 import Footer from "@/components/Footer";
 import MyComponent from "@/components/Color";
+import { FaCaretRight } from "react-icons/fa";
 
 type MusicLink = {
   id: React.Key;
@@ -57,7 +57,7 @@ const Links: MusicLink[] = [
 ];
 
 const description: String =
-  "Lim is an independent musician that makes alternative hip-hop music based out of Vancouver, BC.";
+  "Lim is an independent musician that makes alternative hip-hop music based out of Vancouver, BC living on the traditional territories of the xʷməθkʷəy̓əm (Musqueam), Skwxwú7mesh (Squamish), and səlil̓ilw̓ətaʔɬ (Tsleil-Waututh) peoples.";
 
 export default function Home() {
   let links: MusicLink[] = Links.slice(0, 3);
@@ -78,6 +78,12 @@ export default function Home() {
           <MyComponent />
           <div className="text-2xl">LIM ENGEN</div>
           <div className="text-md">{description}</div>
+        </div>
+
+        <div className="bg-black hover:bg-white border-2 hover:text-black hover:border-white text-white align-middle text-center my-2 w-1/3 mx-auto">
+          <button className="uppercase font-firasans">
+            <Link href="/bio" className="flex items-center">Read Bio <span className="px-2"/><FaCaretRight /></Link>
+          </button>
         </div>
 
         <div>

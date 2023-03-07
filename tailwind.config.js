@@ -27,6 +27,9 @@ module.exports = {
         ndot: ["Ndot"],
         monospace: ["Monospace"],
       },
+      backgroundImage:{
+        'bio': "url('/tattoos.png')",
+      }
     },
   },
   variants: {},
