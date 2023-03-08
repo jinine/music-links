@@ -82,7 +82,10 @@ export default function Home() {
 
         <div className="bg-black hover:bg-white border-2 hover:text-black hover:border-white text-white align-middle text-center my-2 w-1/3 mx-auto">
           <button className="uppercase font-monospace text-xl">
-            <Link href="/bio" className="flex items-center">Read Bio <span className="px-2"/><FaCaretRight /></Link>
+            <Link href="/bio" className="flex items-center">
+              Read Bio <span className="px-2" />
+              <FaCaretRight />
+            </Link>
           </button>
         </div>
 
@@ -92,7 +95,7 @@ export default function Home() {
             {links.map((link: MusicLink) => (
               <Link href={link.attributes.url} key={link.id} className="py-8">
                 <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container mx-auto space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
-                  <div className="p-4 lg:w-1/2">
+                  <div className="p-4 w-1/2">
                     <img
                       src={link.attributes.image}
                       alt={link.attributes.description}
@@ -100,7 +103,7 @@ export default function Home() {
                     />
                   </div>
 
-                  <div className="py-4 lg:w-1/2 p-2">
+                  <div className="py-4 p-2">
                     <div className="font-ndot text-xl font-bold hover:underline">
                       {link.attributes.title}
                     </div>
@@ -112,11 +115,34 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div>
-            {pastLinks.map((link: MusicLink) => (
-              <>{link.attributes.title}</>
-            ))}
-          </div>
+          
+          { pastLinks.length > 0 ? <div className="border-2 border-white rounded p-4 h-72">
+            <div className="py-4 font-bold text-2xl font-ndot">More Content</div>
+            <div className="flex overflow-y-scroll h-48">
+              {pastLinks.map((link: MusicLink) => (
+                <Link
+                  href={link.attributes.url}
+                  key={link.id}
+                  className="mx-2 w-72 h-36 flex-shrink-0"
+                >
+                  <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
+                    <div className="p-4">
+                      <img
+                        src={link.attributes.image}
+                        alt={link.attributes.description}
+                        className="rounded"
+                      />
+                    </div>
+                    <div className="py-4 p-2">
+                      <div className="font-ndot text-sm font-bold hover:underline">
+                        {link.attributes.title}
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div> : null}
         </div>
       </section>
       {/* Footer */}
