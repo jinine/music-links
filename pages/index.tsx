@@ -95,7 +95,7 @@ export default function Home() {
             {links.map((link: MusicLink) => (
               <Link href={link.attributes.url} key={link.id} className="py-8">
                 <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container mx-auto space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
-                  <div className="p-4 w-1/2">
+                  <div className="p-4 lg:w-1/2">
                     <img
                       src={link.attributes.image}
                       alt={link.attributes.description}
