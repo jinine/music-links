@@ -6,6 +6,8 @@ import { uid } from "uid";
 import Footer from "@/components/Footer";
 import MyComponent from "@/components/Color";
 import { FaCaretRight } from "react-icons/fa";
+import { useState } from "react";
+import YouTube from "react-youtube";
 
 type MusicLink = {
   id: React.Key;
@@ -20,6 +22,17 @@ type MusicLink = {
 };
 
 const Links: MusicLink[] = [
+  {
+    id: uid(),
+    attributes: {
+      url: "",
+      youtube: false,
+      spotify: true,
+      title: "CAPSULES - Wonderful (Audio)",
+      description: "Pre-Save CAPSULES' newest release here - releasing 03/21",
+      image: "/wonderful.png",
+    },
+  },
   {
     id: uid(),
     attributes: {
@@ -60,8 +73,9 @@ const description: String =
   "Lim is an independent musician that makes alternative hip-hop music based out of Vancouver, BC living on the traditional territories of the xʷməθkʷəy̓əm (Musqueam), Skwxwú7mesh (Squamish), and səlil̓ilw̓ətaʔɬ (Tsleil-Waututh) peoples.";
 
 export default function Home() {
-  let links: MusicLink[] = Links.slice(0, 3);
-  let pastLinks: MusicLink[] = Links.slice(3);
+  let NewestRelease: MusicLink = Links[0];
+  let links: MusicLink[] = Links.slice(1, 4);
+  let pastLinks: MusicLink[] = Links.slice(4);
 
   return (
     <>
@@ -74,12 +88,14 @@ export default function Home() {
 
       {/* Content */}
       <section id="body" className="min-h-screen overflow-scroll p-12 lg:px-72">
+        {/* Title  */}
         <div className="p-12 rounded text-black border-white border-2 align-middle text-center font-ndot canvas-container overflow-hidden">
           <MyComponent />
           <div className="text-2xl">LIM ENGEN</div>
           <div className="text-md">{description}</div>
         </div>
 
+        {/* Bio  */}
         <div className="bg-black hover:bg-white border-2 hover:text-black hover:border-white text-white align-middle text-center my-2 w-1/3 mx-auto">
           <button className="uppercase font-monospace text-xl">
             <Link href="/bio" className="flex items-center">
@@ -89,6 +105,55 @@ export default function Home() {
           </button>
         </div>
 
+        {/* Featured */}
+        <div>
+          <div className="py-4 font-bold text-2xl font-ndot">
+            Newest Release
+          </div>
+          {/* Video Background */}
+          <div className="h-96">
+            <div className="text-center align-middle font-ndot text-white h-96">
+              {NewestRelease.attributes.youtube ? (
+                <YouTube
+                  videoId="-_o5uiCJLZg"
+                  className="h-96"
+                  opts={{
+                    height: "100%",
+                    width: "100%",
+                    playerVars: {
+                      autoplay: 1,
+                      loop: 1,
+                      controls: 0,
+                      modestbranding: 1,
+                      showinfo: 0,
+                      rel: 0,
+                      disablekb: 1,
+                      start: 1,
+                      fs: 0,
+                      iv_load_policy: 3,
+                    },
+                  }}
+                />
+              ) : (
+                <div className="h-96 items-center flex justify-center mx-auto">
+                  <img
+                    src={NewestRelease.attributes.image}
+                    alt={NewestRelease.attributes.description}
+                    className="rounded h-96"
+                  />
+                </div>
+              )}
+              <Link
+                href={NewestRelease.attributes.url}
+                className="hover:underline"
+              >
+                {NewestRelease.attributes.title}
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Latest */}
         <div>
           <div className="py-4 font-bold text-2xl font-ndot">New Music</div>
           <div className={styles.linksContainer}>
@@ -115,34 +180,39 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          
-          { pastLinks.length > 0 ? <div className="border-2 border-white rounded p-4 h-72">
-            <div className="py-4 font-bold text-2xl font-ndot">More Content</div>
-            <div className="flex overflow-y-scroll h-48">
-              {pastLinks.map((link: MusicLink) => (
-                <Link
-                  href={link.attributes.url}
-                  key={link.id}
-                  className="mx-2 w-72 h-36 flex-shrink-0"
-                >
-                  <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
-                    <div className="p-4">
-                      <img
-                        src={link.attributes.image}
-                        alt={link.attributes.description}
-                        className="rounded"
-                      />
-                    </div>
-                    <div className="py-4 p-2">
-                      <div className="font-ndot text-sm font-bold hover:underline">
-                        {link.attributes.title}
+
+          {/* Previous  */}
+          {pastLinks.length > 0 ? (
+            <div className="border-2 border-white rounded p-4 h-72">
+              <div className="py-4 font-bold text-2xl font-ndot">
+                More Content
+              </div>
+              <div className="flex overflow-y-scroll h-48">
+                {pastLinks.map((link: MusicLink) => (
+                  <Link
+                    href={link.attributes.url}
+                    key={link.id}
+                    className="mx-2 w-72 h-36 flex-shrink-0"
+                  >
+                    <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
+                      <div className="p-4">
+                        <img
+                          src={link.attributes.image}
+                          alt={link.attributes.description}
+                          className="rounded"
+                        />
+                      </div>
+                      <div className="py-4 p-2">
+                        <div className="font-ndot text-sm font-bold hover:underline">
+                          {link.attributes.title}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div> : null}
+          ) : null}
         </div>
       </section>
       {/* Footer */}
