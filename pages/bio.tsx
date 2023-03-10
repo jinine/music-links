@@ -30,7 +30,7 @@ export default function Bio() {
           Lim Engen
         </div>
 
-        <div className="font-monospace text-sm lg:px-36 my-4">
+        <div className="font-monospace text-sm my-4">
           Lim, also known as Capsules, is a rising star in the underground
           hip-hop scene. With a mixed Korean-European background, Lim's music
           brings a unique perspective to his audience. Drawing inspiration from
