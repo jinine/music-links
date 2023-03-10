@@ -25,7 +25,7 @@ const Links: MusicLink[] = [
   {
     id: uid(),
     attributes: {
-      url: "",
+      url: "https://youtu.be/ZqxSZhtkW2o",
       youtube: false,
       spotify: true,
       title: "CAPSULES - Wonderful (Audio)",
@@ -72,7 +72,10 @@ const Links: MusicLink[] = [
 const description: String =
   "Lim is an independent musician that makes alternative hip-hop music based out of Vancouver, BC living on the traditional territories of the xʷməθkʷəy̓əm (Musqueam), Skwxwú7mesh (Squamish), and səlil̓ilw̓ətaʔɬ (Tsleil-Waututh) peoples.";
 
-export default function Home() {
+const newestReleaseDescription: String =
+  "Experience the soulful and introspective track 'Wonderful' by Lim (of Capsules), a poetic journey through the landscape of love and dreams. With a nostalgic boom-bap beat inspired by the likes of early Mac Miller and Pete Rock, 'Wonderful' showcases Lim's dynamic flow and reflective lyricism. The song's lyrics are both honest and vulnerable, exploring the complexities of relationships and the struggles of chasing one's dreams. 'You were the light in my life, but I was too dim', Lim laments, capturing the universal feeling of inadequacy and self-doubt that often accompanies personal growth. As the song unfolds, Lim delves deeper into the intricacies of the human experience, offering insights that are both relatable and inspiring. 'Dreams just dreams 'til you make it happen,' Lim declares, reminding listeners of the power of perseverance and determination in the face of adversity. With its blend of raw talent, creativity, and emotional depth, 'Wonderful' is a true work of art that speaks to the human condition in a way that is both poignant and timeless. So why not take a journey with Lim through the landscape of love and dreams? You won't be disappointed.";
+
+  export default function Home() {
   let NewestRelease: MusicLink = Links[0];
   let links: MusicLink[] = Links.slice(1, 4);
   let pastLinks: MusicLink[] = Links.slice(4);
@@ -106,13 +109,12 @@ export default function Home() {
         </div>
 
         {/* Featured */}
-        <div>
           <div className="py-4 font-bold text-2xl font-ndot">
             Newest Release
           </div>
           {/* Video Background */}
-          <div className="h-96">
-            <div className="text-center align-middle font-ndot text-white h-96">
+          <div>
+            <div className="text-center align-middle font-ndot text-white">
               {NewestRelease.attributes.youtube ? (
                 <YouTube
                   videoId="-_o5uiCJLZg"
@@ -135,22 +137,34 @@ export default function Home() {
                   }}
                 />
               ) : (
-                <div className="h-96 items-center flex justify-center mx-auto">
-                  <img
-                    src={NewestRelease.attributes.image}
-                    alt={NewestRelease.attributes.description}
-                    className="rounded h-96"
-                  />
+                <div className="container lg:grid lg:grid-cols-2 space-y-2 lg:space-y-0">
+                  <div className="flex justify-center">
+                    <Link
+                      href={NewestRelease.attributes.url}
+                      className="hover:underline"
+                      target='_blank'
+                    >
+                      <img
+                        src={NewestRelease.attributes.image}
+                        alt={NewestRelease.attributes.description}
+                        className="rounded h-96"
+                      />
+                    </Link>
+                  </div>
+                  <div className="font-monospace">
+                    <Link
+                      href={NewestRelease.attributes.url}
+                      className="hover:underline font-ndot text-xl"
+                    >
+                      {NewestRelease.attributes.title}
+                    </Link>
+                    <br />
+                    <br />
+                    {newestReleaseDescription}
+                  </div>
                 </div>
               )}
-              <Link
-                href={NewestRelease.attributes.url}
-                className="hover:underline"
-              >
-                {NewestRelease.attributes.title}
-              </Link>
             </div>
-          </div>
         </div>
 
         {/* Latest */}
