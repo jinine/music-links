@@ -155,6 +155,7 @@ const newestReleaseDescription: String =
                     <Link
                       href={NewestRelease.attributes.url}
                       className="hover:underline font-ndot text-xl"
+                      target='_blank'
                     >
                       {NewestRelease.attributes.title}
                     </Link>
@@ -172,7 +173,7 @@ const newestReleaseDescription: String =
           <div className="py-4 font-bold text-2xl font-ndot">New Music</div>
           <div className={styles.linksContainer}>
             {links.map((link: MusicLink) => (
-              <Link href={link.attributes.url} key={link.id} className="py-8">
+              <Link href={link.attributes.url} key={link.id} className="py-8" target='_blank'>
                 <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container mx-auto space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
                   <div className="p-4 lg:w-1/2">
                     <img
@@ -207,6 +208,7 @@ const newestReleaseDescription: String =
                     href={link.attributes.url}
                     key={link.id}
                     className="mx-2 w-72 h-36 flex-shrink-0"
+                    target='_blank'
                   >
                     <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
                       <div className="p-4">
