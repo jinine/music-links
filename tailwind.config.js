@@ -28,7 +28,7 @@ module.exports = {
         monospace: ["Monospace"],
       },
       backgroundImage:{
-        'bio': "url('/tattoos.png')",
+        'bio': "url('/123.png')",
       }
     },
   },
