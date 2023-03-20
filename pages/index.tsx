@@ -29,7 +29,7 @@ const Links: MusicLink[] = [
       youtube: false,
       spotify: true,
       title: "CAPSULES - Wonderful (Audio)",
-      description: "Pre-Save CAPSULES' newest release here - releasing 03/21",
+      description: "Listen to CAPSULES' newest release here",
       image: "/wonderful.png",
     },
   },
