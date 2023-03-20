@@ -25,7 +25,7 @@ const Links: MusicLink[] = [
   {
     id: uid(),
     attributes: {
-      url: "https://youtu.be/ZqxSZhtkW2o",
+      url: "https://youtu.be/oKPAUL_VHes",
       youtube: false,
       spotify: true,
       title: "CAPSULES - Wonderful (Audio)",
