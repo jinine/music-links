@@ -207,7 +207,7 @@ export default function Home() {
                     rel: 0,
                     disablekb: 1,
                     start: 1,
-                    fs: 0,
+                    fs: 1,
                     iv_load_policy: 3,
                   },
                 }}
@@ -278,17 +278,17 @@ export default function Home() {
           </div>
 
           {/* Previous  */}
-          {pastLinks.length > 0 ? (
-            <div className="border-2 border-white rounded p-4 h-72">
+          {/* {pastLinks.length > 0 ? (
+            <div className="border-2 border-white rounded p-4 lg:h-72">
               <div className="py-4 font-bold text-2xl font-ndot">
                 More Content
               </div>
-              <div className="flex overflow-y-scroll h-48">
+              <div className="flex flex-wrap lg:flex-nowrap overflow-x-scroll lg:overflow-hidden lg:h-48">
                 {pastLinks.map((link: MusicLink) => (
                   <Link
                     href={link.attributes.url}
                     key={link.id}
-                    className="mx-2 w-72 h-36 flex-shrink-0"
+                    className="mx-2 w-full lg:w-1/2 xl:w-1/3 flex-shrink-0"
                     target="_blank"
                   >
                     <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
@@ -309,7 +309,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          ) : null}
+          ) : null} */}
         </div>
       </section>
       {/* Footer */}
