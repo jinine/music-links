@@ -35,41 +35,52 @@ type PressRelease = {
   };
 };
 
-const press_releases: PressRelease[] = [
-  {
-    id: uid(),
-    attributes: {
-      title: "CAPSULES - Wonderful Video",
-      description: `
-      To New Fans, Acquaintances and Old Friends, 
+// const press_releases: PressRelease[] = [
+//   {
+//     id: uid(),
+//     attributes: {
+//       title: "CAPSULES - Wonderful Video",
+//       description: `
+//       To New Fans, Acquaintances and Old Friends, 
 
-      This is a video that I imagined and realized with very limited budget and resources. At my core I believe that these kinds of 
-      constraints can truly test the talent of the artist. It's easy to make the already magnificent seem beautiful but it truly takes 
-      ingenuity and creativity to take even the smallest and most insignificant iod of the human fabric and spin it into something great. Not to say that I am any sort of genius creatively or that I'd never want to create studio albums or films - but that even if I never end up having the opportunity to work on large scale productions; there's fulfilment in these pieces that I make for you and with them I feel complete. 
+//       This is a video that I imagined and realized with very limited budget and resources. At my core I believe that these kinds of 
+//       constraints can truly test the talent of the artist. It's easy to make the already magnificent seem beautiful but it truly takes 
+//       ingenuity and creativity to take even the smallest and most insignificant iod of the human fabric and spin it into something great. Not to say that I am any sort of genius creatively or that I'd never want to create studio albums or films - but that even if I never end up having the opportunity to work on large scale productions; there's fulfilment in these pieces that I make for you and with them I feel complete. 
 
-      With that being said I bring to you -- Wonderful, the newest music video by CAPSULES. Shot on location in Sechelt, Burnaby and Maple Ridge - this video intends to combine modern rap and hip-hop with the quaint, slow-moving pace of life in some beautiful locations within British Columbia. In contrast, I myself play a hip-hop loving young-adult that's still holding onto the ambition that he's meant for something larger than what these small towns can offer. Directed, Edited and Performed by myself and shot by my good friend, I truly believe that this is my best work so far and a stepping stone toward something more significant in my journey.
+//       With that being said I bring to you -- Wonderful, the newest music video by CAPSULES. Shot on location in Sechelt, Burnaby and Maple Ridge - this video intends to combine modern rap and hip-hop with the quaint, slow-moving pace of life in some beautiful locations within British Columbia. In contrast, I myself play a hip-hop loving young-adult that's still holding onto the ambition that he's meant for something larger than what these small towns can offer. Directed, Edited and Performed by myself and shot by my good friend, I truly believe that this is my best work so far and a stepping stone toward something more significant in my journey.
 
-      Lim Engen / CAPSULES 
-      `,
-      images: ["/wonderful.png"],
-      links: {
-        url: "https://youtu.be/RvKnzEafI6Y",
-        youtube: true,
-        spotify: false,
-      },
-    },
-  },
-];
+//       Lim Engen / CAPSULES 
+//       `,
+//       images: ["/wonderful.png"],
+//       links: {
+//         url: "https://youtu.be/RvKnzEafI6Y",
+//         youtube: true,
+//         spotify: false,
+//       },
+//     },
+//   },
+// ];
 
 const Links: MusicLink[] = [
   {
     id: uid(),
     attributes: {
-      url: "https://youtu.be/RvKnzEafI6Y",
+      url: "https://youtu.be/pZjng2FynbA",
       youtube: true,
       spotify: false,
-      title: "CAPSULES - Wonderful (Video)",
+      title: "CAPSULES - MANOFTHEYEAR (OFFICIAL VIDEO)",
       description: "Listen to CAPSULES' newest release here",
+      image: "",
+    },
+  },
+  {
+    id: uid(),
+    attributes: {
+      url: "https://youtu.be/RvKnzEafI6Y",
+      youtube: false,
+      spotify: false,
+      title: "CAPSULES - Wonderful (Video)",
+      description: "Listen to CAPSULES - WONDERFUL",
       image: "/wonderful.png",
     },
   },
@@ -129,6 +140,8 @@ export default function Home() {
   let NewestRelease: MusicLink = Links[0];
   let links: MusicLink[] = Links.slice(1, 4);
   let pastLinks: MusicLink[] = Links.slice(4);
+
+  console.log(NewestRelease)
 
   return (
     <>
@@ -193,7 +206,7 @@ export default function Home() {
           <div className="text-center align-middle font-ndot text-white">
             {NewestRelease.attributes.youtube ? (
               <YouTube
-                videoId="RvKnzEafI6Y"
+                videoId="pZjng2FynbA"
                 className="h-96"
                 opts={{
                   height: "100%",
