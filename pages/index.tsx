@@ -64,13 +64,24 @@ type PressRelease = {
 const Links: MusicLink[] = [
   {
     id: uid(),
+    attributes:{
+      url: "https://youtu.be/rD7JjIQztvc",
+      youtube: true,
+      spotify: false,
+      title: "CAPSULES - SHADOW (produced by Dewey Decimal)",
+      description: "",
+      image: ""
+    }
+  },
+  {
+    id: uid(),
     attributes: {
       url: "https://youtu.be/pZjng2FynbA",
       youtube: true,
       spotify: false,
       title: "CAPSULES - MANOFTHEYEAR (OFFICIAL VIDEO)",
-      description: "Listen to CAPSULES' newest release here",
-      image: "",
+      description: "MANOFTHEYEAR Music Video",
+      image: "/alco-art.png",
     },
   },
   {
@@ -141,7 +152,7 @@ export default function Home() {
   let links: MusicLink[] = Links.slice(1, 4);
   let pastLinks: MusicLink[] = Links.slice(4);
 
-  console.log(NewestRelease)
+  // console.log(NewestRelease)
 
   return (
     <>
@@ -206,7 +217,7 @@ export default function Home() {
           <div className="text-center align-middle font-ndot text-white">
             {NewestRelease.attributes.youtube ? (
               <YouTube
-                videoId="pZjng2FynbA"
+                videoId="rD7JjIQztvc"
                 className="h-96"
                 opts={{
                   height: "100%",
