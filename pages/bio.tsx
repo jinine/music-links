@@ -9,55 +9,55 @@ import { Gallery } from "react-grid-gallery";
 
 const pikachu = [
   {
-    src: "/lil_slugger/lil_pikachu/iMG_0066.JPG",
+    src: "/lil_slugger/lil_pikachu/IMG_0066.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/iMG_0070.JPG",
+    src: "/lil_slugger/lil_pikachu/IMG_0070.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/iMG_0075.JPG",
+    src: "/lil_slugger/lil_pikachu/IMG_0075.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/iMG_0081.JPG",
+    src: "/lil_slugger/lil_pikachu/IMG_0081.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/iMG_0092.JPG",
+    src: "/lil_slugger/lil_pikachu/IMG_0092.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/iMG_0100.JPG",
+    src: "/lil_slugger/lil_pikachu/IMG_0100.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/iMG_0108.JPG",
+    src: "/lil_slugger/lil_pikachu/IMG_0108.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/iMG_0121.JPG",
+    src: "/lil_slugger/lil_pikachu/IMG_0121.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/iMG_0130.JPG",
+    src: "/lil_slugger/lil_pikachu/IMG_0130.JPG",
     width: 1600,
     height: 1200,
     caption: "",
@@ -81,31 +81,31 @@ const rabbit = [
 
 const squirtle = [
   {
-    src: "/lil_slugger/lil_squirtle/iMG_0146.JPG",
+    src: "/lil_slugger/lil_squirtle/IMG_0146.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_squirtle/iMG_0147.JPG",
+    src: "/lil_slugger/lil_squirtle/IMG_0147.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_squirtle/iMG_0159.JPG",
+    src: "/lil_slugger/lil_squirtle/IMG_0159.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_squirtle/iMG_0160.JPG",
+    src: "/lil_slugger/lil_squirtle/IMG_0160.JPG",
     width: 1600,
     height: 1200,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_squirtle/iMG_0168.JPG",
+    src: "/lil_slugger/lil_squirtle/IMG_0168.JPG",
     width: 1600,
     height: 1200,
     caption: "",
