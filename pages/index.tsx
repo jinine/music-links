@@ -8,7 +8,6 @@ import MyComponent from "@/components/Color";
 import { FaCaretRight } from "react-icons/fa";
 import { useState } from "react";
 import YouTube from "react-youtube";
-
 type MusicLink = {
   id: React.Key;
   attributes: {
@@ -20,46 +19,6 @@ type MusicLink = {
     image: string;
   };
 };
-
-type PressRelease = {
-  id: React.Key;
-  attributes: {
-    title: string;
-    description: string;
-    images: string[];
-    links: {
-      url: string;
-      spotify: boolean;
-      youtube: boolean;
-    };
-  };
-};
-
-// const press_releases: PressRelease[] = [
-//   {
-//     id: uid(),
-//     attributes: {
-//       title: "CAPSULES - Wonderful Video",
-//       description: `
-//       To New Fans, Acquaintances and Old Friends, 
-
-//       This is a video that I imagined and realized with very limited budget and resources. At my core I believe that these kinds of 
-//       constraints can truly test the talent of the artist. It's easy to make the already magnificent seem beautiful but it truly takes 
-//       ingenuity and creativity to take even the smallest and most insignificant iod of the human fabric and spin it into something great. Not to say that I am any sort of genius creatively or that I'd never want to create studio albums or films - but that even if I never end up having the opportunity to work on large scale productions; there's fulfilment in these pieces that I make for you and with them I feel complete. 
-
-//       With that being said I bring to you -- Wonderful, the newest music video by CAPSULES. Shot on location in Sechelt, Burnaby and Maple Ridge - this video intends to combine modern rap and hip-hop with the quaint, slow-moving pace of life in some beautiful locations within British Columbia. In contrast, I myself play a hip-hop loving young-adult that's still holding onto the ambition that he's meant for something larger than what these small towns can offer. Directed, Edited and Performed by myself and shot by my good friend, I truly believe that this is my best work so far and a stepping stone toward something more significant in my journey.
-
-//       Lim Engen / CAPSULES 
-//       `,
-//       images: ["/wonderful.png"],
-//       links: {
-//         url: "https://youtu.be/RvKnzEafI6Y",
-//         youtube: true,
-//         spotify: false,
-//       },
-//     },
-//   },
-// ];
 
 const Links: MusicLink[] = [
   {
@@ -91,7 +50,7 @@ const Links: MusicLink[] = [
       youtube: false,
       spotify: false,
       title: "CAPSULES - Wonderful (Video)",
-      description: "Listen to CAPSULES - WONDERFUL",
+      description: "Watch CAPSULES - WONDERFUL",
       image: "/wonderful.png",
     },
   },
@@ -102,7 +61,7 @@ const Links: MusicLink[] = [
       youtube: false,
       spotify: true,
       title: "CAPSULES - Wonderful (Audio)",
-      description: "Watch CAPSULES - Wonderful on YouTube now!",
+      description: "Listen to CAPSULES - Wonderful on YouTube now!",
       image: "/wonderful.png",
     },
   },
@@ -142,9 +101,6 @@ const Links: MusicLink[] = [
   },
 ];
 
-const description: String =
-  "Lim is an independent musician that makes alternative hip-hop music based out of Vancouver, BC living on the traditional territories of the xʷməθkʷəy̓əm (Musqueam), Skwxwú7mesh (Squamish), and səlil̓ilw̓ətaʔɬ (Tsleil-Waututh) peoples.";
-
 const newestReleaseDescription: String = "";
 
 export default function Home() {
@@ -158,19 +114,18 @@ export default function Home() {
     <>
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
-        <title>LIM</title>
+        <title>LIL SLUGGER</title>
       </Head>
 
       {/* Header */}
       <Header />
 
       {/* Content */}
-      <section id="body" className="min-h-screen overflow-scroll p-12 lg:px-72">
+      <section id="body" className="min-h-screen overflow-scroll p-12 lg:px-72 mt-4">
         {/* Title  */}
         <div className="p-12 rounded text-black border-white border-2 align-middle text-center font-ndot canvas-container overflow-hidden">
           <MyComponent />
-          <div className="text-2xl">LIM ENGEN</div>
-          <div className="text-md">{description}</div>
+          <div className="text-2xl lg:text-4xl">LIL SLUGGER</div>
         </div>
 
         {/* Menu */}
@@ -181,37 +136,19 @@ export default function Home() {
           >
             <Link
               href="/bio"
-              className="block p-4 uppercase font-monospace text-xl"
+              className="block p-4 uppercase font-ndot text-xl  lg:text-4xl"
             >
-              Bio
+              FW23
             </Link>
           </div>
-          {/* <div
-            className="hover:border-white text-white align-middle text-center my-2 mx-2 lg:w-auto w-72 underline hover:text-blue-500"
-            style={{ wordWrap: "break-word" }}
-          >
-            <Link
-              href="/gallery"
-              className="block p-4 uppercase font-monospace text-xl"
-            >
-              Gallery
-            </Link>
-          </div>
-          <div
-            className="hover:border-white text-white align-middle text-center my-2 mx-2 lg:w-auto w-72 underline hover:text-blue-500"
-            style={{ wordWrap: "break-word" }}
-          >
-            <Link
-              href="/press-release"
-              className="block p-4 uppercase font-monospace text-xl"
-            >
-              Press Releases
-            </Link>
-          </div> */}
+         
         </div>
 
+
+        <div className="bg-bio">
+
         {/* Featured */}
-        <div className="py-4 font-bold text-2xl font-ndot">Newest Release</div>
+        <div className="py-4 font-bold text-2xl lg:text-4xl font-ndot">Newest Release</div>
         {/* Video Background */}
         <div>
           <div className="text-center align-middle font-ndot text-white">
@@ -223,7 +160,7 @@ export default function Home() {
                   height: "100%",
                   width: "100%",
                   playerVars: {
-                    autoplay: 1,
+                    autoplay: 0,
                     loop: 1,
                     controls: 1,
                     modestbranding: 1,
@@ -270,7 +207,7 @@ export default function Home() {
 
         {/* Latest */}
         <div>
-          <div className="py-4 font-bold text-2xl font-ndot">New Music</div>
+          <div className="py-4 font-bold text-2xl font-ndot lg:text-4xl">New Music</div>
           <div className={styles.linksContainer}>
             {links.map((link: MusicLink) => (
               <Link
@@ -289,10 +226,10 @@ export default function Home() {
                   </div>
 
                   <div className="py-4 p-2">
-                    <div className="font-ndot text-xl font-bold hover:underline">
+                    <div className="font-ndot text-xl lg:text-6xl font-bold hover:underline">
                       {link.attributes.title}
                     </div>
-                    <div className="font-monospace text-sm">
+                    <div className="font-monospace text-sm  lg:text-4xl">
                       {link.attributes.description}
                     </div>
                   </div>
@@ -302,28 +239,28 @@ export default function Home() {
           </div>
 
           {/* Previous  */}
-          {/* {pastLinks.length > 0 ? (
-            <div className="border-2 border-white rounded p-4 lg:h-72">
+          {pastLinks.length > 0 ? (
+            <div className="border-2 border-white rounded p-4">
               <div className="py-4 font-bold text-2xl font-ndot">
                 More Content
               </div>
-              <div className="flex flex-wrap lg:flex-nowrap overflow-x-scroll lg:overflow-hidden lg:h-48">
+              <div className="overflow-x-scroll">
                 {pastLinks.map((link: MusicLink) => (
                   <Link
                     href={link.attributes.url}
                     key={link.id}
-                    className="mx-2 w-full lg:w-1/2 xl:w-1/3 flex-shrink-0"
+                    className="mx-2 "
                     target="_blank"
                   >
-                    <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
-                      <div className="p-4">
+                    <div className="hover:bg-secondary hover:text-black w-full h-full rounded container lg:space-y-0 border-2 border-white p-8">
+                      {/* <div className="p-4">
                         <img
                           src={link.attributes.image}
                           alt={link.attributes.description}
                           className="rounded"
                         />
-                      </div>
-                      <div className="py-4 p-2">
+                      </div> */}
+                      <div className="">
                         <div className="font-ndot text-sm font-bold hover:underline">
                           {link.attributes.title}
                         </div>
@@ -333,9 +270,12 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          ) : null} */}
+          ) : null}
+        </div>
+
         </div>
       </section>
+      
       {/* Footer */}
       <Footer />
     </>
