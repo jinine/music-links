@@ -61,7 +61,7 @@ export default function Bio() {
 
         <div className="font-monospace text-sm my-4"></div>
 
-        <div className="flex">
+        <div className="lg:flex">
           {/* <Gallery
             images={acne}
             enableImageSelection={false}
