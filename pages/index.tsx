@@ -23,14 +23,14 @@ type MusicLink = {
 const Links: MusicLink[] = [
   {
     id: uid(),
-    attributes:{
+    attributes: {
       url: "https://youtu.be/rD7JjIQztvc",
       youtube: true,
       spotify: false,
       title: "CAPSULES - SHADOW (produced by Dewey Decimal)",
       description: "",
-      image: ""
-    }
+      image: "",
+    },
   },
   {
     id: uid(),
@@ -108,7 +108,16 @@ export default function Home() {
   let links: MusicLink[] = Links.slice(1, 4);
   let pastLinks: MusicLink[] = Links.slice(4);
 
+  const [artistBio, setArtistBio] = useState(false);
+
   // console.log(NewestRelease)
+
+  const bioImage = {
+    src: "/lil_slugger/lil_acne/5.jpg",
+    width: 1200,
+    height: 1650,
+    caption: "",
+  };
 
   return (
     <>
@@ -121,7 +130,10 @@ export default function Home() {
       <Header />
 
       {/* Content */}
-      <section id="body" className="min-h-screen overflow-scroll p-12 lg:px-72 mt-4">
+      <section
+        id="body"
+        className="min-h-screen overflow-scroll p-12 lg:px-72 mt-4"
+      >
         {/* Title  */}
         <div className="p-12 rounded text-black border-white border-2 align-middle text-center font-ndot canvas-container overflow-hidden">
           <MyComponent />
@@ -141,141 +153,188 @@ export default function Home() {
               FW23
             </Link>
           </div>
-         
         </div>
 
+        {!artistBio ? (
+          <div className="font-ndot text-black border-2 border-white rounded-lg text-xl lg:text-4xl p-2 bg-white">
+            Artist Bio
+            <button
+              className="float-right font-mono text-xl lg:text-2xl"
+              onClick={() => {
+                setArtistBio(!artistBio);
+              }}
+            >
+              Read More
+            </button>
+          </div>
+        ) : (
+          <div className="font-ndot text-black border-2 border-white rounded-lg text-xl lg:text-4xl p-2 bg-white">
+            Artist Bio
+            <button
+              className="float-right font-mono text-xl lg:text-2xl"
+              onClick={() => {
+                setArtistBio(!artistBio);
+              }}
+            >
+              Read Less
+            </button>
+            <div className="lg:flex lg:space-x-2">
+              <img src={bioImage.src} className="lg:w-3/4" />
+              <div>
+                <div>LIL SLUGGER</div>
+                <div className="font-monospace text-lg">
+                  LIL SLUGGER hails from the relatively unknown Vancouver hip-hop scene,
+                  delivering beautifully romantic raps that effortlessly
+                  traverse a diverse musical landscape. With a decade-long
+                  presence, their journey commenced at the age of 17 with the
+                  founding of CAPSULES, a pivotal moment in their artistic
+                  story. Inspired by Pharrell, Timbaland, and early Kanye West,
+                  LIL SLUGGER's music gracefully blends lyrical storytelling
+                  with themes of love and passion. Beyond music, they fuse
+                  visual artistry into their work, creating an immersive
+                  experience. LIL SLUGGER's emotionally resonant and authentic
+                  approach to hip-hop leaves an enduring mark, promising a
+                  captivating journey through the realms of romance and musical
+                  creativity.
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="bg-bio">
-
-        {/* Featured */}
-        <div className="py-4 font-bold text-2xl lg:text-4xl font-ndot">Newest Release</div>
-        {/* Video Background */}
-        <div>
-          <div className="text-center align-middle font-ndot text-white">
-            {NewestRelease.attributes.youtube ? (
-              <YouTube
-                videoId="rD7JjIQztvc"
-                className="h-96"
-                opts={{
-                  height: "100%",
-                  width: "100%",
-                  playerVars: {
-                    autoplay: 0,
-                    loop: 1,
-                    controls: 1,
-                    modestbranding: 1,
-                    showinfo: 0,
-                    rel: 0,
-                    disablekb: 1,
-                    start: 1,
-                    fs: 1,
-                    iv_load_policy: 3,
-                  },
-                }}
-              />
-            ) : (
-              <div className="container lg:grid lg:grid-cols-2 space-y-2 lg:space-x-2 lg:space-y-0">
-                <div className="flex justify-center">
-                  <Link
-                    href={NewestRelease.attributes.url}
-                    className="hover:underline"
-                    target="_blank"
-                  >
-                    <img
-                      src={NewestRelease.attributes.image}
-                      alt={NewestRelease.attributes.description}
-                      className="rounded h-96"
-                    />
-                  </Link>
-                </div>
-                <div className="font-monospace">
-                  <Link
-                    href={NewestRelease.attributes.url}
-                    className="hover:underline font-ndot text-xl"
-                    target="_blank"
-                  >
-                    {NewestRelease.attributes.title}
-                  </Link>
-                  <br />
-                  <br />
-                  {newestReleaseDescription}
-                </div>
-              </div>
-            )}
+          {/* Featured */}
+          <div className="py-4 font-bold text-2xl lg:text-4xl font-ndot">
+            Newest Release
           </div>
-        </div>
-
-        {/* Latest */}
-        <div>
-          <div className="py-4 font-bold text-2xl font-ndot lg:text-4xl">New Music</div>
-          <div className={styles.linksContainer}>
-            {links.map((link: MusicLink) => (
-              <Link
-                href={link.attributes.url}
-                key={link.id}
-                className="py-8"
-                target="_blank"
-              >
-                <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container mx-auto space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
-                  <div className="p-4 lg:w-1/2">
-                    <img
-                      src={link.attributes.image}
-                      alt={link.attributes.description}
-                      className="rounded"
-                    />
+          {/* Video Background */}
+          <div>
+            <div className="text-center align-middle font-ndot text-white">
+              {NewestRelease.attributes.youtube ? (
+                <YouTube
+                  videoId="rD7JjIQztvc"
+                  className="h-96"
+                  opts={{
+                    height: "100%",
+                    width: "100%",
+                    playerVars: {
+                      autoplay: 0,
+                      loop: 1,
+                      controls: 1,
+                      modestbranding: 1,
+                      showinfo: 0,
+                      rel: 0,
+                      disablekb: 1,
+                      start: 1,
+                      fs: 1,
+                      iv_load_policy: 3,
+                    },
+                  }}
+                />
+              ) : (
+                <div className="container lg:grid lg:grid-cols-2 space-y-2 lg:space-x-2 lg:space-y-0">
+                  <div className="flex justify-center">
+                    <Link
+                      href={NewestRelease.attributes.url}
+                      className="hover:underline"
+                      target="_blank"
+                    >
+                      <img
+                        src={NewestRelease.attributes.image}
+                        alt={NewestRelease.attributes.description}
+                        className="rounded h-96"
+                      />
+                    </Link>
                   </div>
-
-                  <div className="py-4 p-2">
-                    <div className="font-ndot text-xl lg:text-6xl font-bold hover:underline">
-                      {link.attributes.title}
-                    </div>
-                    <div className="font-monospace text-sm  lg:text-4xl">
-                      {link.attributes.description}
-                    </div>
+                  <div className="font-monospace">
+                    <Link
+                      href={NewestRelease.attributes.url}
+                      className="hover:underline font-ndot text-xl"
+                      target="_blank"
+                    >
+                      {NewestRelease.attributes.title}
+                    </Link>
+                    <br />
+                    <br />
+                    {newestReleaseDescription}
                   </div>
                 </div>
-              </Link>
-            ))}
+              )}
+            </div>
           </div>
 
-          {/* Previous  */}
-          {pastLinks.length > 0 ? (
-            <div className="border-2 border-white rounded p-4">
-              <div className="py-4 font-bold text-2xl font-ndot">
-                More Content
-              </div>
-              <div className="overflow-x-scroll">
-                {pastLinks.map((link: MusicLink) => (
-                  <Link
-                    href={link.attributes.url}
-                    key={link.id}
-                    className="mx-2 "
-                    target="_blank"
-                  >
-                    <div className="hover:bg-secondary hover:text-black w-full h-full rounded container lg:space-y-0 border-2 border-white p-8">
-                      {/* <div className="p-4">
+          {/* Latest */}
+          <div>
+            <div className="py-4 font-bold text-2xl font-ndot lg:text-4xl">
+              New Music
+            </div>
+            <div className={styles.linksContainer}>
+              {links.map((link: MusicLink) => (
+                <Link
+                  href={link.attributes.url}
+                  key={link.id}
+                  className="py-8"
+                  target="_blank"
+                >
+                  <div className="my-4 hover:bg-secondary hover:text-black w-full h-full rounded container mx-auto space-y-2 lg:space-y-0 lg:grid lg:grid-cols-2 border-2 border-white">
+                    <div className="p-4 lg:w-1/2">
+                      <img
+                        src={link.attributes.image}
+                        alt={link.attributes.description}
+                        className="rounded"
+                      />
+                    </div>
+
+                    <div className="py-4 p-2">
+                      <div className="font-ndot text-xl lg:text-6xl font-bold hover:underline">
+                        {link.attributes.title}
+                      </div>
+                      <div className="font-monospace text-sm  lg:text-4xl">
+                        {link.attributes.description}
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Previous  */}
+            {pastLinks.length > 0 ? (
+              <div className="border-2 border-white rounded p-4">
+                <div className="py-4 font-bold text-2xl font-ndot">
+                  More Content
+                </div>
+                <div className="overflow-x-scroll">
+                  {pastLinks.map((link: MusicLink) => (
+                    <Link
+                      href={link.attributes.url}
+                      key={link.id}
+                      className="mx-2 "
+                      target="_blank"
+                    >
+                      <div className="hover:bg-secondary hover:text-black w-full h-full rounded container lg:space-y-0 border-2 border-white p-8">
+                        {/* <div className="p-4">
                         <img
                           src={link.attributes.image}
                           alt={link.attributes.description}
                           className="rounded"
                         />
                       </div> */}
-                      <div className="">
-                        <div className="font-ndot text-sm font-bold hover:underline">
-                          {link.attributes.title}
+                        <div className="">
+                          <div className="font-ndot text-sm font-bold hover:underline">
+                            {link.attributes.title}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          ) : null}
-        </div>
-
+            ) : null}
+          </div>
         </div>
       </section>
-      
+
       {/* Footer */}
       <Footer />
     </>

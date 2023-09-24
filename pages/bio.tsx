@@ -7,107 +7,29 @@ import Head from "next/head";
 import MyComponent from "@/components/Color";
 import { Gallery } from "react-grid-gallery";
 
-const pikachu = [
+const acne = [
   {
-    src: "/lil_slugger/lil_pikachu/IMG_0066.JPG",
-    width: 1600,
-    height: 1200,
+    src: "/lil_slugger/lil_acne/1.jpg",
+    width: 1200,
+    height: 1650,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/IMG_0070.JPG",
-    width: 1600,
-    height: 1200,
+    src: "/lil_slugger/lil_acne/2.jpg",
+    width: 1200,
+    height: 1650,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/IMG_0075.JPG",
-    width: 1600,
-    height: 1200,
+    src: "/lil_slugger/lil_acne/3.jpg",
+    width: 1200,
+    height: 1650,
     caption: "",
   },
   {
-    src: "/lil_slugger/lil_pikachu/IMG_0081.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_pikachu/IMG_0092.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_pikachu/IMG_0100.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_pikachu/IMG_0108.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_pikachu/IMG_0121.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_pikachu/IMG_0130.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-];
-
-const rabbit = [
-  {
-    src: "/lil_slugger/lil_rabbit/wonderful-presskit-1.png",
-    width: 2560,
-    height: 1444,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_rabbit/wonderful-presskit-2.png",
-    width: 2560,
-    height: 1444,
-    caption: "",
-  },
-];
-
-const squirtle = [
-  {
-    src: "/lil_slugger/lil_squirtle/IMG_0146.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_squirtle/IMG_0147.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_squirtle/IMG_0159.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_squirtle/IMG_0160.JPG",
-    width: 1600,
-    height: 1200,
-    caption: "",
-  },
-  {
-    src: "/lil_slugger/lil_squirtle/IMG_0168.JPG",
-    width: 1600,
-    height: 1200,
+    src: "/lil_slugger/lil_acne/4.jpg",
+    width: 1200,
+    height: 1650,
     caption: "",
   },
 ];
@@ -123,7 +45,7 @@ export default function Bio() {
 
       <section
         id="artist-bio"
-        className="min-h-screen overflow-scroll p-12 lg:px-72"
+        className="min-h-screen overflow-scroll p-12 lg:px-72 mt-2"
       >
         <div className="flex items-center">
           <button className="rounded-full bg-white p-4 text-black text-3xl m-2">
@@ -135,21 +57,20 @@ export default function Bio() {
         <div className="p-12 rounded text-black border-white border-2 align-middle text-center font-ndot canvas-container overflow-hidden">
           <MyComponent />
           <div className="text-2xl">FW23</div>
-          {/* <div className="text-md">{description}</div> */}
         </div>
-
-        {/* <div className="bg-contain bg-center bg-no-repeat bg-bio align-middle items-center h-96 w-full" /> */}
 
         <div className="font-monospace text-sm my-4"></div>
 
-        <div>
-          <Gallery images={pikachu} />
-        </div>
-        <div>
-          <Gallery images={rabbit} />
-        </div>
-        <div>
-          <Gallery images={squirtle} />
+        <div className="flex">
+          {/* <Gallery
+            images={acne}
+            enableImageSelection={false}
+          /> */}
+          {acne.map((image: any, index: any) => {
+            return <div key={index} className="w-full">
+              <img src={image.src} className={`h-${image.height} w-${image.width}`} />
+            </div>;
+          })}
         </div>
       </section>
 
