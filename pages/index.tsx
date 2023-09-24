@@ -178,9 +178,9 @@ export default function Home() {
             >
               Read Less
             </button>
-            <div className="lg:flex lg:space-x-2">
-              <img src={bioImage.src} className="lg:w-3/4" />
-              <div>
+            <div className="lg:flex lg:space-x-2 w-full">
+              <img src={bioImage.src} className="lg:w-96" />
+              <div className="w-full">
                 <div>LIL SLUGGER</div>
                 <div className="font-monospace text-lg">
                   LIL SLUGGER hails from the relatively unknown Vancouver hip-hop scene,
