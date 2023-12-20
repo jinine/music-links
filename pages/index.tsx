@@ -132,88 +132,30 @@ export default function Home() {
       {/* Content */}
       <section
         id="body"
-        className="min-h-screen overflow-scroll p-12 lg:px-72 mt-4 bg-black"
+        className="min-h-screen overflow-scroll p-12 mt-4 bg-black"
       >
-        {/* Title  */}
-        <div className="p-12 rounded text-black border-white border-2 align-middle text-center font-ndot canvas-container overflow-hidden z-50">
-          <MyComponent />
-          <div className="text-2xl lg:text-4xl">LIL SLUGGER</div>
-        </div>
-{/* 
-        <div className="sketchfab-embed-wrapper">
-          <iframe
-            title="Baseball player"
-            allow="autoplay; fullscreen; xr-spatial-tracking"
-            xr-spatial-tracking
-            execution-while-out-of-viewport
-            execution-while-not-rendered
-            web-share
-            src="https://sketchfab.com/models/c56b60f6fecf49b7a197c3682ab7800b/embed?autospin=1&autostart=1&preload=1&ui_theme=dark"
-          >
-          </iframe>
-        </div> */}
-
         {/* Menu */}
-        <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-center">
+        {/* <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-center">
           <div
             className=" hover:border-white text-white align-middle text-center my-2 mx-2 w-72 lg:w-auto underline hover:text-blue-500"
             style={{ wordWrap: "break-word" }}
           >
             <Link
               href="/bio"
-              className="block p-4 uppercase font-ndot text-xl  lg:text-4xl"
+              className="block p-4 uppercase font-ndot text-xl lg:text-4xl"
             >
               FW23
             </Link>
           </div>
-        </div>
+        </div> */}
 
-        {!artistBio ? (
-          <div className="font-ndot text-black border-2 border-white rounded-lg text-xl lg:text-4xl p-2 bg-white">
-            Artist Bio
-            <button
-              className="float-right font-mono text-xl lg:text-2xl"
-              onClick={() => {
-                setArtistBio(!artistBio);
-              }}
-            >
-              Read More
-            </button>
-          </div>
-        ) : (
-          <div className="font-ndot text-black border-2 border-white rounded-lg text-xl lg:text-4xl p-2 bg-white">
-            Artist Bio
-            <button
-              className="float-right font-mono text-xl lg:text-2xl"
-              onClick={() => {
-                setArtistBio(!artistBio);
-              }}
-            >
-              Read Less
-            </button>
-            <div className="lg:flex lg:space-x-2 w-full">
-              <img src={bioImage.src} className="lg:w-96" />
-              <div className="w-full">
-                <div>LIL SLUGGER</div>
-                <div className="font-monospace text-lg">
-                  LIL SLUGGER hails from the relatively unknown Vancouver
-                  hip-hop scene, delivering beautifully romantic raps that
-                  effortlessly traverse a diverse musical landscape. With a
-                  decade-long presence, their journey commenced at the age of 17
-                  with the founding of CAPSULES, a pivotal moment in their
-                  artistic story. Inspired by Pharrell, Timbaland, and early
-                  Kanye West, LIL SLUGGER's music gracefully blends lyrical
-                  storytelling with themes of love and passion. Beyond music,
-                  they fuse visual artistry into their work, creating an
-                  immersive experience. LIL SLUGGER's emotionally resonant and
-                  authentic approach to hip-hop leaves an enduring mark,
-                  promising a captivating journey through the realms of romance
-                  and musical creativity.
-                </div>
-              </div>
+        {/* <div className="font-monospace text-white border-2 border-white rounded-lg text-xl lg:text-4xl p-2 bg-black">
+
+            <div className="font-monospace text-lg p-8">
+              <div className="uppercase font-bold text-xl">LIL SLUGGER</div>
+           
             </div>
-          </div>
-        )}
+          </div> */}
 
         <div className="bg-bio">
           {/* Featured */}
@@ -326,18 +268,10 @@ export default function Home() {
                       target="_blank"
                     >
                       <div className="hover:bg-secondary hover:text-black w-full h-full rounded container lg:space-y-0 border-2 border-white p-8">
-                        {/* <div className="p-4">
-                        <img
-                          src={link.attributes.image}
-                          alt={link.attributes.description}
-                          className="rounded"
-                        />
-                      </div> */}
-                        <div className="">
+                     
                           <div className="font-ndot text-sm font-bold hover:underline">
                             {link.attributes.title}
                           </div>
-                        </div>
                       </div>
                     </Link>
                   ))}
