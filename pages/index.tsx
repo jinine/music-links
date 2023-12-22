@@ -24,12 +24,23 @@ const Links: MusicLink[] = [
   {
     id: uid(),
     attributes: {
+      url: "https://www.youtube.com/watch?v=aj0cdqnWlHM&ab_channel=LILSLUGGER",
+      youtube: true,
+      spotify: false,
+      title: "LIL SLUGGER - BABY",
+      description: "",
+      image: "/baby.png",
+    },
+  },
+  {
+    id: uid(),
+    attributes: {
       url: "https://youtu.be/rD7JjIQztvc",
       youtube: true,
       spotify: false,
       title: "CAPSULES - SHADOW (produced by Dewey Decimal)",
-      description: "",
-      image: "",
+      description: "official music video",
+      image: "/shadow.png",
     },
   },
   {
@@ -108,8 +119,6 @@ export default function Home() {
   let links: MusicLink[] = Links.slice(1, 4);
   let pastLinks: MusicLink[] = Links.slice(4);
 
-  const [artistBio, setArtistBio] = useState(false);
-
   // console.log(NewestRelease)
 
   const bioImage = {
@@ -167,7 +176,7 @@ export default function Home() {
             <div className="text-center align-middle font-ndot text-white">
               {NewestRelease.attributes.youtube ? (
                 <YouTube
-                  videoId="rD7JjIQztvc"
+                  videoId="aj0cdqnWlHM"
                   className="h-96"
                   opts={{
                     height: "100%",
@@ -187,7 +196,7 @@ export default function Home() {
                   }}
                 />
               ) : (
-                <div className="container lg:grid lg:grid-cols-2 space-y-2 lg:space-x-2 lg:space-y-0">
+                <div className="container lg:grid lg:grid-cols-2 space-y-2 lg:space-x-2 lg:space-y-0 border border-white rounded p-4">
                   <div className="flex justify-center">
                     <Link
                       href={NewestRelease.attributes.url}
@@ -204,7 +213,7 @@ export default function Home() {
                   <div className="font-monospace">
                     <Link
                       href={NewestRelease.attributes.url}
-                      className="hover:underline font-ndot text-xl"
+                      className="hover:underline font-ndot text-4xl"
                       target="_blank"
                     >
                       {NewestRelease.attributes.title}
