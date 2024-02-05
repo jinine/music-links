@@ -24,6 +24,28 @@ const Links: MusicLink[] = [
   {
     id: uid(),
     attributes: {
+      url: "https://www.youtube.com/watch?v=_mrTbh5bCNs&ab_channel=LILSLUGGER",
+      youtube: true,
+      spotify: false,
+      title: "LIL SLUGGER - BABY (music video)",
+      description: "",
+      image: "/baby.png",
+    },
+  },
+  {
+    id: uid(),
+    attributes: {
+      url: "https://www.youtube.com/watch?v=2ZBNwdJ7SD0&ab_channel=LILSLUGGER",
+      youtube: true,
+      spotify: false,
+      title: "LIL SLUGGER - MOMENT (visualizer)",
+      description: "",
+      image: "/MOMENT.png",
+    },
+  },
+  {
+    id: uid(),
+    attributes: {
       url: "https://www.youtube.com/watch?v=aj0cdqnWlHM&ab_channel=LILSLUGGER",
       youtube: true,
       spotify: false,
@@ -176,7 +198,7 @@ export default function Home() {
             <div className="text-center align-middle font-ndot text-white">
               {NewestRelease.attributes.youtube ? (
                 <YouTube
-                  videoId="aj0cdqnWlHM"
+                  videoId="_mrTbh5bCNs"
                   className="h-96"
                   opts={{
                     height: "100%",
